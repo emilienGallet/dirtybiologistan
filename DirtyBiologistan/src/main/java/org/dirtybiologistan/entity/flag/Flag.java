@@ -31,7 +31,7 @@ public class Flag {
 		// En date du 4 décembre
 		String data;
 		if (DeployInit.isLive) {
-			data = new BufferedReader(new FileReader("/flag/flag.html")).readLine();
+			data = new BufferedReader(new FileReader("/root/tomcat9/apache-tomcat-9.0.54/webapps/dirtybiologistan/WEB-INF/classes/templates/flag/flag.html")).readLine();
 		}else {
 			data = new BufferedReader(new FileReader(DeployInit.PathResourcesDeploy + "/templates/flag/flag.html")).readLine();
 		}		
@@ -39,7 +39,7 @@ public class Flag {
 		List<LinkedTreeMap<?, ?>> lofficiel = gson.fromJson(data, List.class);
 		// En date du 5 décembre
 		if (DeployInit.isLive) {
-			data = new BufferedReader(new FileReader("/flag/codati.html")).readLine();
+			data = new BufferedReader(new FileReader("/root/tomcat9/apache-tomcat-9.0.54/webapps/dirtybiologistan/WEB-INF/classes/templates/flag/codati.html")).readLine();
 		}else {
 			data = new BufferedReader(new FileReader(DeployInit.PathResourcesDeploy + "/templates/flag/codati.html")).readLine();
 		}	

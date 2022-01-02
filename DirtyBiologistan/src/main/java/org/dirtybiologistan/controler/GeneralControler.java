@@ -439,7 +439,7 @@ public class GeneralControler {
 			} catch (Exception e) {
 				//TODO Auto-generated catch block
 				e.printStackTrace();
-				return "{\"result\":\""+e.getMessage()+"\",\"path\":\""+System.getProperty("user.dir")+"\"}";
+				return "{\"result\":\""+e.getMessage()+"\"}";
 			}
 		}
 		/////////////////////////////////////////////////////////////////////////////////////////////

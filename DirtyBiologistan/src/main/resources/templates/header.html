@@ -1,0 +1,18 @@
+<header data-th-fragment="baseLayout()">
+  <div id="header">
+    <table>
+      <tr>
+        <td><a href="/"><h1>&#8962; DirtyBiologistan</h1></a></td>
+        <td th:if="${isConnected}==null"><div id="register"><a href="/register">Prendre la Nationalité</a><hr><a href="/login">Se connecter</a></div></td>
+        <td th:if="${isConnected}!=null"><div id="register">Bonjour [[${isConnected.username}]]<hr><a href="/citoyens">Votre profil</a></div></td>
+      </tr>
+    </table>
+    
+  
+  <!-- TODO https://api-flag.fouloscopie.com/flag/ afficher le drapeau 
+        conseillé vue.js -->
+        
+  <div>      
+  <!-- en attendant que ce qui est en dessous soit réparé -->
+  <!-- <turbo-frame id="messages" src="https://fouloscopie.com/experiment/7"></turbo-frame> -->
+</header>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head th:replace="~{head:: baseLayout(titre='DirtyBiologistan - Assosciation')}"></head>
+<body>
+  <header th:replace="~{header:: baseLayout()}"></header>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>url du Discord</th>
+        <th>url du site web</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-th-each="association : ${associations}">
+        <!-- TODO doing an IF statement only if dd-MM-yyyy are same for start and end time  -->
+        <td>[[${association.name}]]</td>
+        <td>[[${association.urlDiscord}]]</td>
+        <td>[[${association.urlWebsite}]]</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <section id="vide"></section>
+  <footer th:replace="~{footer:: baseLayout()}"></footer>
+  <script src="https://unpkg.com/vue@3.2.21/dist/vue.global.js"></script>
+  <script type="module" src="/js/flag.js"></script>
+  <script type="text/javascript" src="./js/footer.js"></script>
+  <div id="background"></div>
+</body>
+</html>

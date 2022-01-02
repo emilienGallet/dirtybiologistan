@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+@media print {
+	header, footer {
+		display: none;
+	}
+	@page {
+		size: A4 landscape;		
+	}
+}
+
+#frontCard {
+	background-image: url("/img/backgroundIDCard.png");
+	background-size: contain;
+	height: 720px;
+	width: 1280px;
+}
+
+#frontCard td {
+	font-size: 30px;
+	color: #000;
+}
+#bottomCardFront td{
+	font-size: 7px;
+}
+
+#RPDB {
+	height: 13%;
+}
+
+#RPDB td {
+	font-size: 40px;
+	padding-left: 35px;
+	color: #FFF;
+}
+
+#photoCNI td:first-child {
+	width: 31%;
+	padding-left: 2%;
+	padding-top: 2%;
+	padding-right: 5%;
+	padding-bottom: 5%;
+}
+
+#bottomCardFront {
+	height: 12%;
+}
+
+#photoCNI img {
+	width: 100%;
+}
+
+#CNI {
+	
+}
+
+#Nationaliter {
+	
+}

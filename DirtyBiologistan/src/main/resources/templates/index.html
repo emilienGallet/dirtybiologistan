@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head th:replace="~{head:: baseLayout(titre='DirtyBiologystan - État')}"></head>
+<body>
+  <header th:replace="~{header:: baseLayout()}"></header>
+  <section id="intro">
+    <h5>
+      Ceci est le site web officiel du <strong>DirtyBiologystan</strong>
+    </h5>
+    <p>Vu son très jeune âge, merci de patienter pour les
+      services publics en cours de déploiement</p>
+    <p>
+      Dans l'attente de l'établissement de notre nouvelle <a
+        href="./constitution">consitution</a>, merci de bien vouloir
+      patienter
+    </p>
+
+  <p id="end">Cordialement, un citoyen du DirtyBiologistan</p>
+  </section>
+  <section id="menu">
+    <table>
+      <tr class="largeScreen">
+        <td></td>
+        <td><a href="/citoyens"><img th:attr="src=${ressourceesDeploy +'/img/id.png'}"><div>Famille</div></a></td>
+        <td><img th:attr="src=${ressourceesDeploy +'/img/justice.png'}"><div>Consitution<br>&<br>Justice</div></td>
+        <td><img th:attr="src=${ressourceesDeploy +'/img/assotiation.png'}"><div>Assosciation</div></td>
+        <td><a href="/drapeau"> <img th:attr="src=${ressourceesDeploy +'/img/flag.png'}"><div>Drapeau</div></a></td>
+        <td><img th:attr="src=${ressourceesDeploy +'/img/administration.png'}"><div>Administration</div></td>
+        <td><img th:attr="src=${ressourceesDeploy +'/img/stranger.png'}"><div>Voyage à l'étranger</div></td>
+      </tr>
+      <!--  -->
+      <tr class="smallScreen"><td><a href="/citoyens"><img th:attr="src=${ressourceesDeploy +'/img/id.png'}"><div>Papier-Citoyenneté</div></a></td></tr>
+      <tr class="smallScreen"><td><img th:attr="src=${ressourceesDeploy +'/img/justice.png'}"><div>Consitution<br>&<br>Justice</div></td></tr>
+      <tr class="smallScreen"><td><img th:attr="src=${ressourceesDeploy +'/img/assotiation.png'}"><div>Assosciation</div></td></tr>
+      <tr class="smallScreen"><td><a href="/drapeau"><img th:attr="src=${ressourceesDeploy +'/img/flag.png'}"><div>Drapeau</div></a></td></tr>
+      <tr class="smallScreen"><td><img th:attr="src=${ressourceesDeploy +'/img/administration.png'}"><div>Administration</div></td></tr>
+      <tr class="smallScreen"><td><img th:attr="src=${ressourceesDeploy +'/img/stranger.png'}"><div>Voyage à l'étranger</div></td></tr>
+    </table>
+  </section>
+  <section id="vide"></section>
+  <footer th:replace="~{footer:: baseLayout()}"></footer>
+  <script type="text/javascript" th:attr="src=${ressourceesDeploy +'/js/footer.js'}"></script>
+</body>
+</html>

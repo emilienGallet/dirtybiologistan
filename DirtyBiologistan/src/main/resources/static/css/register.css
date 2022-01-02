@@ -1,0 +1,15 @@
+@charset "UTF-8";
+#colone,#ligne{
+	display: inline-block;
+}
+
+input, select {
+    background-color: black;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#tableEnregistrement{
+	width: 100%;
+	text-align: center;
+}

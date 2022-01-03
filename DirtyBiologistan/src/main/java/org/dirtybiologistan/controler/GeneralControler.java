@@ -72,11 +72,7 @@ public class GeneralControler {
 	 */
 	@GetMapping("/")
 	public String home(Model m) {		
-		if (DeployInit.isLive) {
-			m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy);
-		} else {
-			m.addAttribute("ressourceesDeploy", "");
-		}
+		m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
 		m.addAttribute("isConnected", getCurentUserOrNull());
 		return "index";
 	}
@@ -88,11 +84,7 @@ public class GeneralControler {
 	 */
 	@GetMapping("/constitution")
 	public String consitution(Model m) {
-		if (DeployInit.isLive) {
-			m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy);
-		} else {
-			m.addAttribute("ressourceesDeploy", "");
-		}
+		m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
 		m.addAttribute("isConnected", getCurentUserOrNull());
 		return "constitution";
 	}
@@ -117,11 +109,7 @@ public class GeneralControler {
 	 */
 	@GetMapping("/citoyens/{colone}/{ligne}")
 	public String citoyensID(Model m) {
-		if (DeployInit.isLive) {
-			m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy);
-		} else {
-			m.addAttribute("ressourceesDeploy", "");
-		}
+		m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
 		m.addAttribute("isConnected", getCurentUserOrNull());
 		return "citoyens";
 	}
@@ -137,13 +125,9 @@ public class GeneralControler {
 		/**
 		 * La localisation des resources est différente lors du déploiment.
 		 */
-		if (DeployInit.isLive) {
-			m.addAttribute("pixies", drapeau.drapeau);
-			m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy);
-		} else {
-			m.addAttribute("pixies", drapeau.drapeau);
-			m.addAttribute("ressourceesDeploy", "");
-		}
+		m.addAttribute("pixies", drapeau.drapeau);
+		m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
+
 		//Si l'utilisateur est connecter, alors il peux afficher ces pixels voisins et parametrer son pixel.
 		try {
 			People p = getCurentUser();
@@ -215,11 +199,7 @@ public class GeneralControler {
 		if (getCurentUserOrNull()!=null) {
 			return "redirect:/";
 		}
-		if (DeployInit.isLive) {
-			m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy);
-		} else {
-			m.addAttribute("ressourceesDeploy", "");
-		}
+		m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
 		m.addAttribute("p", new People());
 		m.addAttribute("isConnected", getCurentUserOrNull());
 		return "login";
@@ -282,7 +262,7 @@ public class GeneralControler {
 		m.addAttribute("register", new People());
 		m.addAttribute("roles", PeopleRole.values());
 		if (DeployInit.isLive) {
-			m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy);
+			m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
 		} else {
 			m.addAttribute("ressourceesDeploy", "");
 		}
@@ -383,7 +363,7 @@ public class GeneralControler {
 				m.addAttribute("people", p);
 				m.addAttribute("cardIdentification", asked);
 				if (DeployInit.isLive) {
-					m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy);
+					m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
 				} else {
 					m.addAttribute("ressourceesDeploy", "");
 				}
@@ -408,7 +388,7 @@ public class GeneralControler {
 	@GetMapping("/police")
 	public String police(Model m) {
 		if (DeployInit.isLive) {
-			m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy);
+			m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
 		} else {
 			m.addAttribute("ressourceesDeploy", "");
 		}

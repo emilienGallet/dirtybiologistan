@@ -2,7 +2,7 @@ async function editerPixel(){
 	
 	let value = document.getElementById('hex01').innerText;
 	console.log(value)
-	let res = await fetch('/drapeau', {
+	let res = await fetch('/dirtybiologistan/drapeau', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify(value)

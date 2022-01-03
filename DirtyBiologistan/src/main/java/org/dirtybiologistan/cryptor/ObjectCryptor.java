@@ -14,7 +14,7 @@ public class ObjectCryptor {
 	 * @param cipher 
 	 * @return
 	 */
-	public static String encode(String element, String cipher) {
+	public static String encode(String element) {
 		
 		//AES.encode a faire
 		

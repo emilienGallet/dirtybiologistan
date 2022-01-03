@@ -34,7 +34,7 @@ public class PeopleDetailsService implements UserDetailsService {
     public final PasswordEncoder bCryptPasswordEncoder;
 
     public PeopleDetailsService() throws NoSuchAlgorithmException{
-    	this.bCryptPasswordEncoder =new BCryptPasswordEncoder(31,SecureRandom.getInstanceStrong());
+    	this.bCryptPasswordEncoder =new BCryptPasswordEncoder();
     }
    
     @Override
@@ -48,6 +48,7 @@ public class PeopleDetailsService implements UserDetailsService {
 
     public void save(People people,String cipher) {
         encrypt(people,cipher);
+        System.out.println("Ecryptage OK "+people.getUsername()+" début de sauvegarde");
         peopleList.save(people);
     }
 
@@ -70,11 +71,12 @@ public class PeopleDetailsService implements UserDetailsService {
 	 * @param pds 
 	 */
 	private void encrypt(People people, String cipher) {
-		people.setLieuIRL(ObjectCryptor.encode(people.getLieuIRL(),cipher));
-		people.setEmail(ObjectCryptor.encode(people.getEmail(),cipher));
-		people.setUsername(ObjectCryptor.encode(people.getUsername(),cipher));
-		people.setName(ObjectCryptor.encode(people.getName(),cipher));
-		people.setFirstname(ObjectCryptor.encode(people.getFirstname(),cipher));
+		people.setLieuIRL(ObjectCryptor.encode(people.getLieuIRL()));
+		people.setEmail(ObjectCryptor.encode(people.getEmail()));
+		people.setUsername(ObjectCryptor.encode(people.getUsername()));
+		people.setName(ObjectCryptor.encode(people.getName()));
+		people.setFirstname(ObjectCryptor.encode(people.getFirstname()));
+		System.out.println("Encryptage des donneés OK" + people.getUsername()+"encryptage du MDP");
 		people.setPassword(bCryptPasswordEncoder.encode(people.getPassword()));
 	}
     /**

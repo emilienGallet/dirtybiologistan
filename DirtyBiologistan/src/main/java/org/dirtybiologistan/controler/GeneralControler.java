@@ -324,9 +324,11 @@ public class GeneralControler {
 				}
 			}
 			// Tout est ok on va enregistrer la personne et l'auto connecter.
+			System.out.println("Tout est OK pour" +p.getUsername()+" Ajout de la clé de chiffrement");
 			String chi =addMapDecipher(p.getUsername(),p.getPassword());
-			
+			System.out.println("Clé de chiffrement pour "+p.getUsername()+ "OK");
 			pds.save(p,chi);
+			System.out.println("Sauvegarde pour "+p.getUsername()+ "OK");
 			//Décryptage des données présente en BDD exposé au public comme le veux une spécification dite en assemblée
 			try {
 				UserDetails userDetails = pds.loadUserByUsername(p.getUsername());
@@ -377,7 +379,7 @@ public class GeneralControler {
 		try {
 			People p = getCurentUser();
 			if (Sha512DigestUtils.shaHex(p.getId().toString()).contentEquals(idCard)) {
-				String asked = Sha512DigestUtils.shaHex(idCard+System.getProperties().getProperty("user.dir"));
+				String asked = Sha512DigestUtils.shaHex(idCard+cipher);
 				m.addAttribute("people", p);
 				m.addAttribute("cardIdentification", asked);
 				if (DeployInit.isLive) {

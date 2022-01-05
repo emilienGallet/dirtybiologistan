@@ -62,6 +62,7 @@ public class GeneralControler {
 	public GeneralControler(){
 		start=true;
 		cipher = System.getProperties().getProperty("user.dir");
+		System.out.println("[CIPHER] = "+cipher);
 		decipher = new HashMap<>();
 	}
 

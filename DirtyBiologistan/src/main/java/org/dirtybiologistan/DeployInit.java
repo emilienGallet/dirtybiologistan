@@ -29,7 +29,7 @@ public class DeployInit {
 	public static final String PathDeploy = Default_Path+"";
 	public static final String PathImgDeploy = PathDeploy + "";//""
 	public static final String PathResourcesDeploy = "/dirtybiologistan";
-	public static final String NomDeDomaine = "https://www.emiliengallet.fr/dirtybiologistan/";//Déja pris a modifier
-	public static final String PathResourcesDeploy2 = NomDeDomaine+"dirtybiologistan";
+	public static final String NomDeDomaine = "https://www.emiliengallet.fr/dirtybiologistan";//Déja pris a modifier
+	public static final String PathResourcesDeploy2 = NomDeDomaine;
 	/**/
 }

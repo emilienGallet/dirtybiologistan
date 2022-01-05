@@ -16,7 +16,7 @@ public class DeployInit {
 	
 	//Debug mod 
 	/**/
-	public static final String Default_Path = System.getProperty("user.dir");
+	public static final String Default_Path = "/home/emilien/git/Dirtybiologistan/DirtyBiologistan";
 	public static final String PathDeploy = Default_Path+"/src/main/resources";//+"/ROOT/WEB-INF/classes";
 	public static final String PathImgDeploy = PathDeploy + "/static";//""
 	public static final String PathResourcesDeploy = PathDeploy;

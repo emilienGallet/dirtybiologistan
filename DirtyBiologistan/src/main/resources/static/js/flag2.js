@@ -7,15 +7,19 @@ function displayFlag(boolean){
 	if(x=="none"){
 		console.log("afficher drapeau")
 		document.getElementById('displayFlag').value="Chargement du drapeau"
+		document.getElementById('pixelisator').style.display="none"
+		document.getElementById('lesVoisins').style.display="none"
 		setTimeout(realDisplayFlag, 1000)
 
 	}else{
 		console.log("cacher drapeau")
 		document.getElementById('leDrapeau').style.display="none"
+		document.getElementById('pixelisator').style.display="inline-block"
+		document.getElementById('lesVoisins').style.display="inline-block"
 		document.getElementById('displayFlag').value="Afficher le drapeau"
 	}
 } 
 function realDisplayFlag(){
 	document.getElementById('leDrapeau').style.display="inherit"
-	document.getElementById('displayFlag').value="Cacher le drapeau"
+	document.getElementById('displayFlag').value="Afficher le Pixelisator"
 }

@@ -261,11 +261,7 @@ public class GeneralControler {
 		}
 		m.addAttribute("register", new People());
 		m.addAttribute("roles", PeopleRole.values());
-		if (DeployInit.isLive) {
-			m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
-		} else {
-			m.addAttribute("ressourceesDeploy", "");
-		}
+		m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
 		m.addAttribute("isConnected", null);
 		return "register";
 	}
@@ -362,11 +358,7 @@ public class GeneralControler {
 				String asked = Sha512DigestUtils.shaHex(idCard+cipher);
 				m.addAttribute("people", p);
 				m.addAttribute("cardIdentification", asked);
-				if (DeployInit.isLive) {
-					m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
-				} else {
-					m.addAttribute("ressourceesDeploy", "");
-				}
+				m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
 				m.addAttribute("isConnected", p);
 				return "carteIdentiter";// html a crée
 			} else {
@@ -387,11 +379,7 @@ public class GeneralControler {
 	
 	@GetMapping("/police")
 	public String police(Model m) {
-		if (DeployInit.isLive) {
-			m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
-		} else {
-			m.addAttribute("ressourceesDeploy", "");
-		}
+		m.addAttribute("ressourceesDeploy", DeployInit.PathResourcesDeploy2);
 		m.addAttribute("assotiations", assotiations);
 		m.addAttribute("isConnected", getCurentUserOrNull());
 		return "police";

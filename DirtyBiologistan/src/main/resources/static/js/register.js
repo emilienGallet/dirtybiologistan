@@ -21,7 +21,7 @@ function isPhone() {
 	let str = navigator.userAgent;
 	//alert(str)
 	if (str.includes("Windows") || str.includes("Linux")) {
-		document.getElementById('colone').style.display = "none"
+		document.getElementById('colone').style.display = "none" //des erreur a ce niveau la. try catch avec setTimeout.
 		document.getElementById('ligne').style.display = "none"
 		return false;
 	}

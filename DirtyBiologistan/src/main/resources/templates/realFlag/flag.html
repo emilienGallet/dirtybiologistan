@@ -5,7 +5,6 @@
 <body>
 	<script type="text/javascript" th:attr="src=${ressourceesDeploy +'/js/flag2.js'}"></script>
 	<header th:replace="~{header:: baseLayout()}"></header>
-	<p>[[${#lists.size(pixies)}]]</p>
 	<!-- ATTENTION : COLONE : LIGNE .-->
 	<table th:if="${voisins}!=null" class="parametrage inlineBlock" id="lesVoisins">
 		<thead>
@@ -21,7 +20,7 @@
 		</tbody>
 	</table>
 
-	<div class="inlineBlock" th:if="${voisins}!=null">
+	<div id="pixelisator" class="inlineBlock" th:if="${voisins}!=null">
 		<div th:replace="~{pixelColor:: baseLayout()}"></div>
 		<script type="text/javascript" th:attr="src=${ressourceesDeploy +'/js/pixelColor.js'}"></script>
 

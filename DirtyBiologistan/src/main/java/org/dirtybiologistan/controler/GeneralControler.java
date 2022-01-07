@@ -397,10 +397,24 @@ public class GeneralControler {
     @ResponseBody
     public List<Object> allDB(HttpServletResponse reponse) throws IOException{
     	if (getCurentUserOrNull()==null) {
-			reponse.sendRedirect("/");
+			reponse.sendRedirect(DeployInit.PathResourcesDeploy2);
 		}
     	List<Object> data = new ArrayList<Object>();
     	data.add(pds.getAllUsers());
+    	data.add(this.drapeau);
+    	return data;
+    }
+    
+    /**
+	 * Renvoie toute les données de la base de donnée à propos du drapeau
+	 * @return the flag
+	 * ATTENTION : ceci est destiner a évolution dans les prochaine version pour prendre en compte un clé d'API.
+	 */
+    @RequestMapping("/allFlagDB")
+    @ResponseBody
+    public List<Object> allFlagDB(){
+    	List<Object> data = new ArrayList<Object>();
+    	//On pourra rajouter des info nécéssaire si besoin comme par exemple le nombre de pixel
     	data.add(this.drapeau);
     	return data;
     }

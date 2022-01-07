@@ -1,11 +1,13 @@
 package org.dirtybiologistan.controler;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 
 import org.dirtybiologistan.DeployInit;
 import org.dirtybiologistan.entity.People;
@@ -389,10 +391,14 @@ public class GeneralControler {
 	/**
 	 * Renvoie toute les données de la base de donnée afin de rendre acte des données personnel que l'on récolte.
 	 * @return
+	 * @throws IOException 
 	 */
     @RequestMapping("/allDB")
     @ResponseBody
-    public List<Object> allDB(){
+    public List<Object> allDB(HttpServletResponse reponse) throws IOException{
+    	if (getCurentUserOrNull()!=null) {
+			reponse.sendRedirect("/");
+		}
     	List<Object> data = new ArrayList<Object>();
     	data.add(pds.getAllUsers());
     	data.add(this.drapeau);

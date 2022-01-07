@@ -396,7 +396,7 @@ public class GeneralControler {
     @RequestMapping("/allDB")
     @ResponseBody
     public List<Object> allDB(HttpServletResponse reponse) throws IOException{
-    	if (getCurentUserOrNull()!=null) {
+    	if (getCurentUserOrNull()==null) {
 			reponse.sendRedirect("/");
 		}
     	List<Object> data = new ArrayList<Object>();
